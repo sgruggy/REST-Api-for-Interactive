@@ -25,9 +25,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function (req, res, next) {
   const allowedOrigins = ['http://127.0.0.1:5500', 'https://i6.cims.nyu.edu'];
   const currentOrigin = req.headers.origin;
-  console.log(currentOrigin);
   if(allowedOrigins.indexOf(currentOrigin) > -1){
     res.setHeader('Access-Control-Allow-Origin', origin);
+    console.log("Allowed access to " + origin);  
   }
   // Website you wish to allow to connect
   // res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5500');
